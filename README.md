@@ -59,7 +59,7 @@ To run the project, execute the following commands in your terminal in strict se
 
 Randomly extract 1200 files from each language for Experience 1, and 2000 files from each language for Experience 2. 
 
-Execute the following scripts: 
+*Execute the following scripts:* 
 
 python data_loading.py --exp 1 --seed 42  # For Experience 1 
 
@@ -70,7 +70,7 @@ python data_loading.py --exp 2 --seed 42  # For Experience 2
 ### 4.2  MFCC features extraction
 Extract 13 MFCC features using librosa library. 
 
-Execute the following scripts:
+*Execute the following scripts:* 
 
 python extract_mfcc.py --exp 1  # For Experience 1
     
@@ -81,7 +81,7 @@ python extract_mfcc.py --exp 2  # For Experience 2
 ### 4.3 Phonetic features extraction
 Extract 5 or 7 phonetic feature using librosa and parselmouth libraries.
 
-Execute the following scripts:
+*Execute the following scripts:* 
 
 python extract_phonetic.py --exp 1 --features 7  # For Experience 1 with 7 features
     
@@ -93,20 +93,38 @@ python extract_phonetic.py --exp 2 --features 5  # For Experience 2
 ### 4.4 Data split
 Split data into train, validation, and test sets (repartition is 70-15-15).
 
-Execute the following scripts: 
+*Execute the following scripts:*  
 
 python split_data.py --features mfcc --exp 1  # For Experience 1 with MFCC features
-
-python split_data.py --features mfcc --exp 2  # For Experience 2 with MFCC features
 
 python split_data.py --features phonetic --exp 1 --subfolder 7features # For Experience 1 with 7 phonetic features
 
 python split_data.py --features phonetic --exp 1 --subfolder 5features # For Experience 1 with 5 phonetic features
 
+python split_data.py --features mfcc --exp 2  # For Experience 2 with MFCC features
+
 python split_data.py --features phonetic --exp 2  For Experience 2 with 5 phonetic features
 
 
-### 4.5 Model training 
+### 4.5 Model training
+Train and test the TitaNet-inspired model. Compute best training accuracy, test accuracy, metrics score, confusion matrix and learning curves. 
+
+*Execute the following scripts:* 
+
+python train_model.py --features mfcc --exp 1  # For Experience 1 with MFCC features
+
+python train_model.py --features phonetic --exp 1 --subfolder 7features  # For Experience 1 with 7 phonetic features
+
+python train_model.py --features phonetic --exp 1 --subfolder 7features --normalize  # For Experience 1 with 7 normalized phonetic features
+
+python train_model.py --features phonetic --exp 1 --subfolder 5features  # For Experience 1 with 5 phonetic features
+
+python train_model.py --features phonetic --exp 1 --subfolder 5features --normalize  # For Experience 1 with 5 normalized phonetic features
+
+python train_model.py --features mfcc --exp 2  # For Experience 2 with MFCC features
+
+python train_model.py --features phonetic --exp 2 -- normalize # For Experience 2 with 5 normalized phonetic features
+
 
 
 
