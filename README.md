@@ -48,5 +48,23 @@ data/
 
 **Note**: Extract the downloaded zip files directly into the corresponding language folders.
 
+---
+
+## 4. Data Sampling
+
+For computational reasons, randomly extract 1200 files from each language for Experience 1, and 2000 files from each language for Experience 2. 
+
+Execute the following scripts: 
+
+python data_loading.py --exp 1 --seed 42  # For Experience 1 
+python data_loading.py --exp 2 --seed 42  # For Experience 2
+
+---
+
+## 5. MFCC features extraction
+
+
+
+
 
 
