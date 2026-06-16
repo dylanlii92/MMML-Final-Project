@@ -1,0 +1,10 @@
+numpy
+librosa
+torch
+torchvision
+scikit-learn
+matplotlib
+seaborn
+tqdm
+parselmouth
+praat-parselmouth
