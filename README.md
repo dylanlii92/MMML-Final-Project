@@ -1,10 +1,5 @@
 # Lightweight Spoken Language Identification
 
-A comparative study of MFCC and phonetically-guided features for spoken language identification, using a lightweight TitaNet-inspired architecture that runs on CPU.
-
-**Course**: Multimodal Learning  
-**Date**: 2025
-
 ---
 
 ## 1. Introduction
