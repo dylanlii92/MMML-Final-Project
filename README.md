@@ -17,33 +17,36 @@ Two experiments are conducted:
 | **Exp 2** | Spanish, Portuguese | 2000 | Test phonetic features on closely related languages |
 
 ---
+## 2. Requirements
+This project can be run with any version of Python >= 3.10. 
+Before running any script, install the required Python packages:
 
-## 2. Data Preparation
+pip install numpy librosa torch torchvision scikit-learn matplotlib seaborn tqdm parselmouth praat-parselmouth
 
-### 2.1 Directory Structure
+---
 
-Place your raw audio files in the following structure:
 
+## 3. Data Preparation
+
+### 3.1 Dataset
+
+We use the **VoxLingua107** dataset ([Valk and Alumäe, SLT 2021](https://arxiv.org/abs/2011.12998)), which contains YouTube speech data for 107 languages with approximately 6628 hours of training data. Individual language archives can be downloaded from:
+
+[https://cs.taltech.ee/staff/tanel.alumae/data/voxlingua107/](https://cs.taltech.ee/staff/tanel.alumae/data/voxlingua107/)
+
+### 3.2 Directory Structure
+
+Place your downloaded audio files in the following structure:
 data/
 └── raw_data/
-├── en/ # English
-├── fr/ # French
-├── de/ # German
-├── zh/ # Mandarin
-├── es/ # Spanish
-└── pt/ # Portuguese (for Exp 2)
+├── en/ # English (en.zip)
+├── fr/ # French (fr.zip)
+├── de/ # German (de.zip)
+├── zh/ # Mandarin Chinese (zh.zip)
+├── es/ # Spanish (es.zip)
+└── pt/ # Portuguese (pt.zip)
+
+**Note**: Extract the downloaded zip files directly into the corresponding language folders.
 
 
 
-Supported audio formats: `.wav`, `.mp3`, `.flac`
-
-### 2.2 Sampling
-
-Run the data loading script to create balanced datasets:
-
-```bash
-# Experience 1: 5 languages, 1200 samples each
-python data_loading.py --exp 1 --seed 42
-
-# Experience 2: Spanish vs Portuguese, 2000 samples each
-python data_loading.py --exp 2 --seed 42
