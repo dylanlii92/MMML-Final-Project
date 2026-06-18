@@ -1,4 +1,4 @@
-# Lightweight Spoken Language Identification
+# Lightweight Spoken Language Identification Using Phonetically-Guided Features
 
 ---
 
@@ -16,9 +16,13 @@ Two experiments are conducted:
 | **Exp 1** | English, French, German, Mandarin, Spanish | 1200 | Compare MFCC vs phonetic features on diverse languages |
 | **Exp 2** | Spanish, Portuguese | 2000 | Test phonetic features on closely related languages |
 
+
+**Note**: Please refer to the report for methodological details.
+
 ---
 ## 2. Requirements
 This project can be run with any version of Python >= 3.10. 
+
 Before running any script, install the required Python packages:
 
 pip install numpy librosa torch torchvision scikit-learn matplotlib seaborn tqdm parselmouth praat-parselmouth
@@ -50,9 +54,9 @@ data/
 
 ---
 
-## Scripts
+## 4. Scripts
 
-To run the project, execute the following commands in your terminal in strict sequential order:
+To run the project, execute the following commands in your terminal in strict sequential order.
 
 
 ### 4.1 Data Sampling
@@ -91,7 +95,7 @@ python extract_phonetic.py --exp 2 --features 5  # For Experience 2
 
 
 ### 4.4 Data split
-Split data into train, validation, and test sets (repartition is 70-15-15).
+Split data into train, validation, and test sets (repartition is 70%- 15%- 15%).
 
 *Execute the following scripts:*  
 
@@ -126,7 +130,9 @@ python train_model.py --features mfcc --exp 2  # For Experience 2 with MFCC feat
 python train_model.py --features phonetic --exp 2 -- normalize # For Experience 2 with 5 normalized phonetic features
 
 
+## 5. Contact details 
 
+If you have any questions or inquiries, please contact Dylan LI (licz25@mails.tsinghua.edu.cn) or Maxime SKIPETROV (ma-kxm25@mails.tsinghua.edu.cn)
 
 
 
